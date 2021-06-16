@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto || Inicio</title>
+    <link rel="stylesheet" href="/static/css/milligram.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        CRYPTO FLASK--BZ VII
+    </header>
+    <section>
+        
+        <h1>
+            Movimimientos
+        </h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>From</th>
+                    <th>Q</th>
+                    <th>To</th>
+                    <th>Q</th>
+                    <th>Precio Unidad</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for movimiento in datos %}
+                <tr>
+                    <td>{{ movimiento.fecha }}</td>
+                    <td>{{ movimiento.hora }}</td>
+                    <td>
+                        {% if movimiento.from == 0 %}
+                            EUR
+                        {% elif movimiento.from == 1 %}
+                            BTC
+                        {% elif movimiento.from == 2 %}
+                            ETH 
+                        {% elif movimiento.from == 3 %}
+                            XRP
+                        {% elif movimiento.from == 4 %}
+                            LTC 
+                        {% elif movimiento.from == 5 %}
+                            BCH
+                        {% elif movimiento.from == 6 %}
+                            BNB
+                        {% elif movimiento.from == 7 %}
+                            USDT
+                        {% elif movimiento.from == 8 %}
+                            EOS
+                        {% elif movimiento.from == 9 %}
+                            BSV
+                        {% elif movimiento.from == 10 %}
+                            XLM                            
+                        {% elif movimiento.from == 11 %}
+                            ADA
+                        {% else %}
+                            TRX
+                        {% endif %}
+                    </td>
+                    <td>{{ movimiento.q1 }}</td>
+                    <td>
+                        {% if movimiento.to == 0 %}
+                            EUR
+                        {% elif movimiento.to == 1 %}
+                            BTC
+                        {% elif movimiento.to == 2 %}
+                            ETH 
+                        {% elif movimiento.to == 3 %}
+                            XRP
+                        {% elif movimiento.to == 4 %}
+                            LTC 
+                        {% elif movimiento.to == 5 %}
+                            BCH
+                        {% elif movimiento.to == 6 %}
+                            BNB
+                        {% elif movimiento.to == 7 %}
+                            USDT
+                        {% elif movimiento.to == 8 %}
+                            EOS
+                        {% elif movimiento.to == 9 %}
+                            BSV
+                        {% elif movimiento.to == 10 %}
+                            XLM                            
+                        {% elif movimiento.to == 11 %}
+                            ADA
+                        {% else %}
+                            TRX
+                        {% endif %}
+                    </td>
+                    <td>{{ movimiento.q2 }}</td>     
+                    <td> Ya veremos</td>            
+                </tr>
+                {% endfor %}
+            </tbody>    
+        </table>
+    </section>
+    <footer>
+        &copy; 2021 - Todos los derechos reservados 2021
+    </footer>
+</body>
+</html>
